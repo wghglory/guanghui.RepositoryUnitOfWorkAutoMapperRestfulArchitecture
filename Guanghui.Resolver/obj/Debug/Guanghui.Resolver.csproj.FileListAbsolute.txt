@@ -1,0 +1,13 @@
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Resolver\bin\Debug\Guanghui.Resolver.dll
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Resolver\bin\Debug\Guanghui.Resolver.pdb
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Resolver\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Resolver\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Resolver\bin\Debug\Microsoft.Practices.Unity.dll
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Resolver\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Resolver\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Resolver\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Resolver\bin\Debug\Microsoft.Practices.Unity.xml
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Resolver\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Resolver\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Resolver\obj\Debug\Guanghui.Resolver.dll
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Resolver\obj\Debug\Guanghui.Resolver.pdb

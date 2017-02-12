@@ -1,0 +1,10 @@
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Model\bin\Debug\Guanghui.Model.dll.config
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Model\bin\Debug\Guanghui.Model.dll
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Model\bin\Debug\Guanghui.Model.pdb
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Model\bin\Debug\EntityFramework.dll
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Model\bin\Debug\EntityFramework.xml
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Model\obj\Debug\Guanghui.Model.dll
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Model\obj\Debug\Guanghui.Model.pdb
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.Model\obj\Debug\Guanghui.Model.csprojResolveAssemblyReference.cache

@@ -1,0 +1,4 @@
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.BusinessEntities\bin\Debug\Guanghui.BusinessEntities.dll
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.BusinessEntities\bin\Debug\Guanghui.BusinessEntities.pdb
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.BusinessEntities\obj\Debug\Guanghui.BusinessEntities.dll
+D:\VS projects\Guanghui.RestfulEnterpriseArchitecture\Guanghui.BusinessEntities\obj\Debug\Guanghui.BusinessEntities.pdb

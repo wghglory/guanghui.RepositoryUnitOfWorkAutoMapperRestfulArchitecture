@@ -1,0 +1,1 @@
+﻿封装了所有repository，有点类似DbSession，只要service层被注入UnitOfWork就能访问任何

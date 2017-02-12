@@ -1,0 +1,145 @@
+﻿<#@ template language="C#" debug="false" hostspecific="true"#>
+<#@ include file="EF.Utility.CS.ttinclude"#>
+<#@ output extension=".cs"#>
+ 
+<#
+
+CodeGenerationTools code = new CodeGenerationTools(this);
+MetadataLoader loader = new MetadataLoader(this);
+CodeRegion region = new CodeRegion(this, 1);
+MetadataTools ef = new MetadataTools(this);
+//修改当前tt模板相对应的edmx模型的位置
+string inputFile = @"..\\DataModel.edmx";
+
+EdmItemCollection ItemCollection = loader.CreateEdmItemCollection(inputFile);
+string namespaceName = code.VsNamespaceSuggestion();
+
+EntityFrameworkTemplateFileManager fileManager = EntityFrameworkTemplateFileManager.Create(this);
+#>
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Data.Entity.Validation;
+using Guanghui.Repository.GenericRepository;
+
+
+namespace Guanghui.Repository.UnitOfWork
+{
+
+	/// <summary>
+    /// Unit of Work class responsible for DB transactions
+    /// </summary>
+    public class UnitOfWork : IDisposable, IUnitOfWork
+	{
+		#region Private member variables...
+
+        private readonly WebApiDbContext _context = null;
+
+		<#
+		foreach (EntityType entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
+		{#>
+private GenericRepository<<#=entity.Name#>> _<#=this.ToCamelCase(entity.Name)#>Repository;
+		<#}#>
+
+        #endregion
+	
+		public UnitOfWork()
+        {
+            _context = new WebApiDbContext();
+        }
+
+		#region Public Repository Creation properties...
+		<#
+		foreach (EntityType entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
+		{#>
+public GenericRepository<<#=entity.Name#>> <#=entity.Name#>Repository
+        {
+            get
+            {
+                if (this._<#=this.ToCamelCase(entity.Name)#>Repository == null)
+                    this._<#=this.ToCamelCase(entity.Name)#>Repository = new GenericRepository<<#=entity.Name#>>(_context);
+                return _<#=this.ToCamelCase(entity.Name)#>Repository;
+            }
+        }
+		<#}#>
+		#endregion
+
+		#region Public member methods...
+        /// <summary>
+        /// Save method.
+        /// </summary>
+        public void Save()
+        {
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+
+                var outputLines = new List<string>();
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    outputLines.Add(string.Format("{0}: Entity of type \"{1}\" in state \"{2}\" has the following validation errors:", DateTime.Now, eve.Entry.Entity.GetType().Name, eve.Entry.State));
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        outputLines.Add(string.Format("- Property: \"{0}\", Error: \"{1}\"", ve.PropertyName, ve.ErrorMessage));
+                    }
+                }
+                System.IO.File.AppendAllLines(@"C:\errors.txt", outputLines);
+
+                throw e;
+            }
+
+        }
+
+        #endregion
+
+        #region Implementing IDiosposable...
+
+        #region private dispose variable declaration...
+        private bool disposed = false; 
+        #endregion
+
+        /// <summary>
+        /// Protected Virtual Dispose method
+        /// </summary>
+        /// <param name="disposing"></param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    Debug.WriteLine("UnitOfWork is being disposed");
+                    _context.Dispose();
+                }
+            }
+            this.disposed = true;
+        }
+
+        /// <summary>
+        /// Dispose method
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        } 
+        #endregion
+	
+	}
+
+}
+
+
+<#+
+	public string ToCamelCase(string str)
+	{
+		string firstLetter = str.Substring(0,1);
+		str = str.Replace(firstLetter, firstLetter.ToLower());
+		return str;
+	}
+
+
+#>
